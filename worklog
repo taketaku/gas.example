@@ -1,0 +1,6 @@
+
+$npm install -g @google/clasp
+$$SHELL -l
+$ # create work dir and cd
+$git init
+$clasp login
