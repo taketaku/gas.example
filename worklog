@@ -4,3 +4,12 @@ $$SHELL -l
 $ # create work dir and cd
 $git init
 $clasp login
+$clasp create --type standalone
+$ git ci -m "init"
+
+#typescript
+# refere: https://github.com/google/clasp/blob/master/docs/typescript.md
+! add sample code
+$clasp push
+$clasp open
+$npm add -D @types/google-apps-script
