@@ -6,7 +6,8 @@
     "predeploy": "npm run build",
     "open": "clasp open",
     "test": "jest --passWithNoTests",
-    "lint": "eslint 'src/**/*.{ts,tsx}'"
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix"
   },
   "license": "ISC",
   "devDependencies": {
