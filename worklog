@@ -27,3 +27,6 @@ $touch tsconfig.json # and write
 
 # jest
 # refere: https://jestjs.io/docs/getting-started
+
+# github secrets
+# see: https://qiita.com/iron-samurai/items/fdf0def390a160d044c3
