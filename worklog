@@ -13,3 +13,5 @@ $ git ci -m "init"
 $clasp push
 $clasp open
 $npm add -D @types/google-apps-script
+
+$touch tsconfig.json # and write

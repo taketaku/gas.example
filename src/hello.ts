@@ -1,6 +1,4 @@
-const greeter = (person: string) => {
-  return `Hello, ${person}!`;
-};
+import { greeter } from "./greeter";
 
 function testGreeter() {
   const user = "Grant";
