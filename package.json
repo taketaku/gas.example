@@ -3,6 +3,7 @@
   "scripts": {
     "build": "rollup --config",
     "deploy": "clasp push",
+    "predeploy": "npm run build",
     "open": "clasp open"
   },
   "license": "ISC",
