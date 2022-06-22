@@ -16,8 +16,11 @@ $npm add -D @types/google-apps-script
 
 $touch tsconfig.json # and write
 # rollup.js + bubel
-see: https://github.com/google/clasp/blob/master/docs/typescript.md
-see: https://github.com/google/clasp/blob/master/docs/esmodules.md
+# see: https://github.com/google/clasp/blob/master/docs/typescript.md
+# see: https://github.com/google/clasp/blob/master/docs/esmodules.md
 
 # refere: https://aligach.net/diary/2020/1112/
 # refere: https://dev.classmethod.jp/articles/typescript-clasp-github-actions/
+
+# lint
+# refere: https://typescript-eslint.io/docs/linting/
