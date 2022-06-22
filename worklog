@@ -24,3 +24,6 @@ $touch tsconfig.json # and write
 
 # lint
 # refere: https://typescript-eslint.io/docs/linting/
+
+# jest
+# refere: https://jestjs.io/docs/getting-started
