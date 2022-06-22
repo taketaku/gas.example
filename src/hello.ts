@@ -1,6 +1,6 @@
 import { greeter } from "./greeter";
 
-function testGreeter() {
+export function testGreeter() {
   const user = "Grant";
   Logger.log(greeter(user));
 }
