@@ -7,4 +7,4 @@ CLASPJSON=$(cat <<-END
 END
 )
 
-echo $CLASPJSON > ~/.clasp.json
+echo $CLASPJSON > .clasp.json
