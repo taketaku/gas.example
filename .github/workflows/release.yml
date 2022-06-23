@@ -48,11 +48,11 @@ jobs:
           bash deployment/setup_clasp.sh
 
       - name: Upload files
-        run: npm run clasp push --force
+        run: npx @google/clasp push --force
 
       - name: Get version
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
 
       - name: Add version
-        run: npm run clasp version ${{ steps.get_version.outputs.VERSION }}
+        run: npx @google/clasp version ${{ steps.get_version.outputs.VERSION }}
