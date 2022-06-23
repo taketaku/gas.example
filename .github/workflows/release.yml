@@ -52,7 +52,7 @@ jobs:
         run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
 
       - name: Upload files
-        run: clasp push --force
+        run: npm run clasp push --force
 
       - name: Add version
-        run: clasp version ${{ steps.get_version.outputs.VERSION }}
+        run: npm run clasp version ${{ steps.get_version.outputs.VERSION }}

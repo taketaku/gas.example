@@ -5,7 +5,8 @@
     "open": "clasp open",
     "test": "jest --passWithNoTests",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix"
+    "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix",
+    "clasp": "clasp"
   },
   "license": "ISC",
   "devDependencies": {
