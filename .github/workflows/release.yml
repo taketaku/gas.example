@@ -41,6 +41,7 @@ jobs:
 
       - name: Create ~/.clasprc.json
         run: |
+          echo $CLASP_SCRIPT_ID
           bash deployment/setup_clasprc.sh
 
       - name: Create ~/.clasp.json
