@@ -1,6 +1,9 @@
-
 $npm install -g @google/clasp
-$$SHELL -l
+
+# https://script.google.com/home/usersettings API を On にする
+
+$$
+SHELL -l
 $ # create work dir and cd
 $git init
 $clasp login
@@ -15,7 +18,7 @@ $clasp open
 $npm add -D @types/google-apps-script
 
 $touch tsconfig.json # and write
-# rollup.js + bubel
+# rollup.js + babel
 # see: https://github.com/google/clasp/blob/master/docs/typescript.md
 # see: https://github.com/google/clasp/blob/master/docs/esmodules.md
 
@@ -30,3 +33,4 @@ $touch tsconfig.json # and write
 
 # github secrets
 # see: https://qiita.com/iron-samurai/items/fdf0def390a160d044c3
+$$

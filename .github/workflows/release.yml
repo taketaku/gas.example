@@ -20,9 +20,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
+
       - name: cache dependencies
         uses: actions/cache@v3
         with:
@@ -30,45 +32,27 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+
       - name: install dependencies
         run: npm install
+
       - name: build
         run: npm run build
+
       - name: Create ~/.clasprc.json
         run: |
-          echo $(cat <<-EOS
-          {
-            "token": {
-              "access_token": "${CLASPRC_ACCESS_TOKEN}",
-              "scope": "https://www.googleapis.com/auth/script.deployments https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/drive.file openid https://www.googleapis.com/auth/service.management https://www.googleapis.com/auth/script.projects https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/drive.metadata.readonly https://www.googleapis.com/auth/logging.read https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/script.webapp.deploy",
-              "token_type": "Bearer",
-              "id_token": "${CLASPRC_ID_TOKEN}",
-              "expiry_date": ${CLASPRC_EXPIRY_DATE},
-              "refresh_token": "${CLASPRC_REFRESH_TOKEN}"
-            },
-            "oauth2ClientSettings": {
-              "clientId": "${CLASPRC_CLIENT_ID}",
-              "clientSecret": "${CLASPRC_CLIENT_SECRET}",
-              "redirectUri": "http://localhost"
-            },
-            "isLocalCreds": false
-          }
-          EOS
-          ) > ~/.clasprc.json
+          bash deployment/setup_clasprc.sh
+
       - name: Create ~/.clasp.json
         run: |
-          echo $(cat <<-EOS
-          {
-            "scriptId": "${CLASP_SCRIPT_ID}"
-          }
-          EOS
-          ) > ./.clasp.json
+          bash deployment/setup_clasp.sh
+
       - name: Get version
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
 
       - name: Upload files
-        run: npx @google/clasp push --force
+        run: clasp push --force
 
       - name: Add version
-        run: npx @google/clasp version ${{ steps.get_version.outputs.VERSION }}
+        run: clasp version ${{ steps.get_version.outputs.VERSION }}
